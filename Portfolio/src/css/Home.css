@@ -1,0 +1,13 @@
+.home_overlay {
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+  background-color: gray;
+  scroll-snap-type: y mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.home_page {
+  margin-top: 100px;
+}

@@ -1,0 +1,13 @@
+.goal_layout {
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+  background-color: gray;
+  scroll-snap-type: y mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.goal_page {
+  margin-top: 100px;
+}
