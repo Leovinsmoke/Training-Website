@@ -7,7 +7,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   z-index: 1000;
-  border-bottom: 3px solid black; /* Đường đen ở dưới */
+  border-bottom: 3px solid white;
 }
 
 /* Các mục trong navbar */
@@ -25,9 +25,9 @@ nav {
 
 /* Hiệu ứng khi mục được chọn */
 .option.selected {
-  border: 3px solid black;
+  border: 3px solid white;
   padding: 10px 10px 10px;
   border-bottom-width: 0px;
-  margin-bottom: -33px;
-  background: gray;
+  margin-bottom: -32px;
+  background: #0a1a2f;
 }
