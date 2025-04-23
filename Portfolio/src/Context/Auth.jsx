@@ -11,6 +11,7 @@ export const handlelogin = async (email, password, setError) => {
       (u) => u.email === email && u.password === password
     );
     if (user) {
+      sessionStorage.setItem("userEmail", email);
       return { success: true, message: "Login successful!" };
     } else {
       setError("Invalid username or password");

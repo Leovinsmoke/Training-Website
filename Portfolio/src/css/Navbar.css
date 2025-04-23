@@ -2,10 +2,10 @@
 nav {
   position: fixed;
   width: 100%;
-  height: 70px;
+  height: 100px; /* Tăng chiều cao để chứa user-info */
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end; /* Căn các mục sát dưới */
   z-index: 1000;
   border-bottom: 3px solid white;
 }
@@ -15,12 +15,13 @@ nav {
   color: white;
   text-decoration: none;
   margin-right: 20px;
-  margin-bottom: -30px;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
 }
 
 /* Hiệu ứng hover */
 .option:hover {
-  color: lightgray; /* Xám nhạt khi hover */
+  color: lightgray;
 }
 
 /* Hiệu ứng khi mục được chọn */
@@ -28,6 +29,54 @@ nav {
   border: 3px solid white;
   padding: 10px 10px 10px;
   border-bottom-width: 0px;
-  margin-bottom: -32px;
+  margin-bottom: -2px;
   background: #0a1a2f;
+}
+
+/* Định dạng phần user */
+.user {
+  position: absolute;
+  top: 10px; /* Đặt ở trên cùng */
+  right: 20px; /* Căn phải */
+}
+
+/* Định dạng thông tin người dùng */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa icon, email và nút logout */
+  color: white;
+}
+
+.user-icon {
+  font-size: 24px; /* Kích thước icon */
+}
+
+.user-email {
+  font-size: 16px;
+}
+
+.logout-btn {
+  background-color: #ff4444; /* Màu đỏ cho nút logout */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #cc0000; /* Đậm hơn khi hover */
+}
+
+/* Định dạng NavLink trong user khi chưa đăng nhập */
+.user a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.user a:hover {
+  color: lightgray;
 }
