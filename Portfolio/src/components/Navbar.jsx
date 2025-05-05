@@ -16,14 +16,14 @@ const Navbar = () => {
   const handlelogout = () => {
     sessionStorage.removeItem("userEmail");
     setUserEmail(null);
-    navigate("/login");
+    navigate("/");
   };
 
   return (
     <div>
       <nav>
         <NavLink
-          to="/"
+          to="/home"
           className={({ isActive }) => `option ${isActive ? "selected" : ""}`}
         >
           Home
@@ -34,18 +34,20 @@ const Navbar = () => {
         >
           Goal
         </NavLink>
+        <NavLink
+          to="/history"
+          className={({ isActive }) => `option ${isActive ? "selected" : ""}`}
+        >
+          History
+        </NavLink>
         <div className="user">
-          {userEmail ? (
-            <div className="user-info">
-              <span className="user-icon">👤</span>
-              <span className="user-email">{userEmail}</span>
-              <button className="logout-btn" onClick={handlelogout}>
-                Logout
-              </button>
-            </div>
-          ) : (
-            <NavLink to="/login">Login</NavLink>
-          )}
+          <div className="user-info">
+            <span className="user-icon">👤</span>
+            <span className="user-email">{userEmail}</span>
+            <button className="logout-btn" onClick={handlelogout}>
+              Logout
+            </button>
+          </div>
         </div>
       </nav>
     </div>

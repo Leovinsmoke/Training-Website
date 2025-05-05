@@ -16,6 +16,39 @@ const Goal = () => {
     );
   };
 
+  const handleSubmit = () => {
+    const today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
+    const completedCount = goals.filter((goal) => goal.completed).length;
+    const progress = (completedCount / goals.length) * 100;
+
+    // Prepare data to save
+    const historyEntry = {
+      date: today,
+      progress: Math.round(progress),
+      goals: goals.map((goal) => ({
+        text: goal.text,
+        completed: goal.completed,
+      })),
+    };
+
+    // Retrieve existing history from localStorage
+    const existingHistory =
+      JSON.parse(localStorage.getItem("goalHistory")) || [];
+
+    // Check if there's already an entry for today
+    const updatedHistory = existingHistory.filter(
+      (entry) => entry.date !== today
+    );
+
+    // Add new entry
+    updatedHistory.push(historyEntry);
+
+    // Save to localStorage
+    localStorage.setItem("goalHistory", JSON.stringify(updatedHistory));
+
+    alert("Goals submitted successfully!");
+  };
+
   const completedCount = goals.filter((goal) => goal.completed).length;
   const progress = (completedCount / goals.length) * 100;
 
@@ -50,6 +83,10 @@ const Goal = () => {
               </span>
             </div>
           ))}
+
+          <button className="submit_button" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
       </div>
     </div>

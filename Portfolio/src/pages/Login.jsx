@@ -22,7 +22,7 @@ const Login = () => {
     const result = await handlelogin(email, password, setError); // Updated to email
     if (result.success) {
       alert(result.message);
-      navigate("/");
+      navigate("/home");
     }
   };
 

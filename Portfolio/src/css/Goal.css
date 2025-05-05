@@ -59,3 +59,14 @@
   height: 15px;
   cursor: pointer;
 }
+
+.submit_button {
+  border-radius: 20px;
+  background: radial-gradient(circle at center, white, black);
+  color: black;
+  font-weight: bold;
+}
+
+.submit_button:hover {
+  background: gray;
+}
