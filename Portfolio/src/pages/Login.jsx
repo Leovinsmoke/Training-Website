@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { handlelogin, handleregister } from "../Context/Auth";
 import "../css/Login.css";
 
@@ -64,7 +64,6 @@ const Login = () => {
                 required
               />
               {error && <p className="error">{error}</p>}
-              <Link to="/">back to main</Link>
               <button type="submit">Sign in</button>
             </form>
           ) : (
@@ -85,7 +84,6 @@ const Login = () => {
                 required
               />
               {error && <p className="error">{error}</p>}
-              <Link to="/">back to main</Link>
               <button type="submit">Sign up</button>
             </form>
           )}
